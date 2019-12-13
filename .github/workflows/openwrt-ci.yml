@@ -11,7 +11,7 @@ name: OpenWrt-CI
 
 on:
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 */3 * * *
   push:
     branches: 
       - master
@@ -111,7 +111,7 @@ jobs:
           CONFIG_TARGET_x86_64_Generic=y
           EOF
 
-          固件压缩:
+          # 固件压缩:
           cat >> .config <<EOF
           CONFIG_TARGET_IMAGES_GZIP=y
           EOF
